@@ -9,7 +9,13 @@
     <link href="https://fonts.googleapis.com/css?family=Norican|Open+Sans:300,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Francois+One|PT+Sans+Narrow|Raleway|Arimo|Roboto|Lato" rel="stylesheet">
 
-
+    <style>
+     #map {
+       width: 100%;
+       height: 400px;
+       background-color: grey;
+     }
+    </style>
 
   </head>
   <body>
@@ -70,6 +76,26 @@
         Suspendisse pharetra tempor tincidunt. Aliquam erat justo, accumsan quis sem ac, sodales pharetra diam. Quisque vel malesuada sem, a scelerisque tortor. Morbi euismod dictum tellus, tincidunt pretium velit maximus ut. Nulla facilisi. Nulla non lobortis ex, quis volutpat felis. Pellentesque a odio ullamcorper, auctor dui et, ultrices mauris.
     </p>
   </div>
+
+  <div id="map"></div>
+   <script>
+     function initMap() {
+       var uluru = {lat: 37.7245, lng: -83.6346};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 15,
+         center: uluru,
+         scrollwheel: false
+       });
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map
+       });
+     }
+   </script>
+   <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UeCQMEFSUxoXDLXJsvcn0XJZ169jepI&callback=initMap">
+   </script>
+
 
   <div class="container-fluid footer">
     <h4> CONTACT INFO: <h4>
